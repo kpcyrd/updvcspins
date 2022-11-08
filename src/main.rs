@@ -96,12 +96,12 @@ fn main() -> Result<()> {
                     let src = input.source_mut();
                     *src = pin.source.clone();
                     if let Source::Git(git) = src {
-                        /*
-                        // TODO: do we want to pin commit instead of the tag object hash?
-                        git.tag = None;
-                        git.commit = Some(pin.commit_hash.clone());
-                        */
-                        git.tag = Some(pin.tag_hash.clone());
+                        if args.pin_commit {
+                            git.tag = None;
+                            git.commit = Some(pin.commit_hash.clone());
+                        } else {
+                            git.tag = Some(pin.tag_hash.clone());
+                        }
                     }
                 }
 

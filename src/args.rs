@@ -17,4 +17,7 @@ pub struct Args {
     /// Write updated PKGBUILD to this path
     #[arg(short, long)]
     pub output: Option<PathBuf>,
+    /// Pin commits instead of tag object hashes
+    #[arg(long)]
+    pub pin_commit: bool,
 }
