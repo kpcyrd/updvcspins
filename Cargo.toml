@@ -1,0 +1,17 @@
+[package]
+name = "updvcspins"
+version = "0.1.0"
+description = "Manage pinned VCS repositories in PKGBUILDs (Arch Linux tooling)"
+license = "GPL-3.0"
+repository = "https://github.com/kpcyrd/updvcspins"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.66"
+clap = { version = "4.0.19", features = ["derive"] }
+env_logger = "0.9.1"
+git-repository = "0.26.0"
+log = "0.4.17"
+url = "2.3.1"
